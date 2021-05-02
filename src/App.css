@@ -1,38 +1,474 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+body {
+  margin: 0 auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: #f8f8f9;
+  font-family: "Open Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.container-fluid {
+  width: 1300px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-link {
+  font-size: 12px;
+  font-family: "montserrat";
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+  margin: 0 10px;
+}
+.menu-link.active {
+  color: #0062ff;
+}
+.menu-link:hover {
+  color: #0062ff;
+}
+.sign-up-btn {
+  background: #60d91a 0% 0% no-repeat padding-box;
+  box-shadow: 0px 10px 20px #60d91a4d;
+  border-radius: 4px;
   text-align: center;
+  font: normal normal bold 12px/15px Montserrat;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 14px 19px;
+  border: 0;
+}
+.sign-in-btn {
+  margin-right: 20px;
+}
+.sign-in-btn i {
+  font-size: 25px;
+  margin-top: 0px;
+  position: relative;
+  top: 5px;
+  left: -5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  /* display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 50px; */
+  width: 1000px;
+  margin: auto;
+  padding: 30px 0;
+  /* justify-content: space-between; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Quiz */
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  grid-gap: 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-div {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+.text-box {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  padding: 0 80px;
+}
+.tag {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 3px 20px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+.text-box h3 {
+  text-transform: capitalize;
+  font-size: 26px;
+}
+.upper-text p {
+  margin-top: 15px;
+}
+
+.down-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.down-text .name h5 {
+  text-transform: capitalize;
+}
+.down-text .icon i {
+  font-size: 25px;
+  margin-right: 10px;
+}
+.progress-line {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  top: 50px;
+  background: rgba(190, 206, 240, 0.473);
+}
+.progress-line2 {
+  position: absolute;
+  height: 8px;
+  width: 60%;
+  top: 50px;
+  background: #60d91a;
+}
+
+/* quiz part */
+.right-div {
+  margin-top: 20px;
+}
+.question-no {
+  color: #60d91a;
+  margin-bottom: 15px;
+}
+.question-no span {
+  color: rgba(190, 206, 240, 1);
+}
+.question {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.question-img {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
+}
+.question-img img {
+  width: 70%;
+  border-radius: 8px;
+}
+.img-options {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.active-img i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: #60d91a;
+  font-size: 20px;
+}
+.red-img i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: #d91a2a;
+  font-size: 20px;
+}
+.img-options img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+}
+.active-img,
+.red-img {
+  position: relative;
+}
+.active-img img {
+  border: 3px solid #60d91a;
+}
+.red-img img {
+  border: 3px solid #d91a2a;
+}
+.option {
+  background: rgb(212, 215, 219);
+  line-height: 50px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.option:hover {
+  background: #60d91a;
+  color: #fff;
+  cursor: pointer;
+}
+.option.active-option {
+  background: #60d91a;
+  color: #fff;
+}
+.option.red-option {
+  background: #d91a2a;
+  color: #fff;
+}
+.submit-btn {
+  background: #0062ff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 10px 20px #03358650;
+  color: #fff;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.submit-btn.disabled {
+  background: #bfbfbf;
+  color: #000;
+  pointer-events: none;
+}
+.btn {
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.next-btn {
+  color: #0062ff;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.next-btn.disabled {
+  color: #bfbfbf;
+  pointer-events: none;
+}
+.next-btn i {
+  margin-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Score Section */
+.score-div {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.medal {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: #0062ff;
+}
+.score {
+  color: #60d91a;
+  font-size: 70px !important;
+}
+.share-score {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #afafaf;
+  align-items: center;
+}
+.share-score div {
+  margin-left: 10px;
+}
+.share-score div i {
+  font-size: 25px;
+  margin: 0 6px;
+}
+.workshop-card {
+  background: #ffffff;
+  box-shadow: 0px 5px 10px #01368619;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.workshop-card .image {
+  width: 100%;
+}
+.workshop-card img {
+  width: inherit;
+}
+.workshop-card .details-1 {
+  padding: 8px 10px;
+}
+.workshop-card .details-1 h6 {
+  text-transform: capitalize;
+  color: #000;
+  line-height: 16px;
+  height: 35px;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+}
+footer h4 {
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+footer a {
+  padding: 5px 0;
+  color: #60d91a;
+  display: block;
+  text-decoration: none;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+footer input {
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #707070;
+  background-color: #000;
+  padding-left: 20px;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+footer button {
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 250px;
+  background-color: transparent !important;
+  color: #60d91a;
+  border: 2px solid #60d91a;
+  margin-top: 20px;
+  padding: 7px 0;
+  border-radius: 4px;
+  font-family: Montserrat;
+  letter-spacing: 2.8px;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-header {
+  display: none;
+}
+.mobile-header i {
+  font-size: 25px;
+}
+.overlay-none {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+.overlay-menu {
+}
+.overlay-menu .menu-link {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.overlay-menu .sign-up-btn {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 576px) {
+  .container-fluid {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  footer .container-fluid {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #000;
+  }
+  footer h4 {
+    margin-top: 20px;
+  }
+  footer input {
+    width: 70%;
+  }
+  footer button {
+    width: 150px;
+  }
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+  .row {
+    display: block;
+  }
+  .mobile-header-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .footer-grid {
+    display: block;
+  }
+  .text-box {
+    padding: 0 30px;
+  }
+  .question {
+    font-size: 16px;
+  }
+  .btn {
+    line-height: 40px;
+  }
+  .img-options img {
+    width: 80px;
+    height: 80px;
   }
 }
